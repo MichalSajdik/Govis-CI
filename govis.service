@@ -1,0 +1,15 @@
+[Unit]
+Description=Govis Process Supervisor
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+WorkingDirectory=/opt/govis/
+ExecStart=/opt/govis/Govis-CI
+EnvironmentFile=/opt/govis/govis.conf
+User=govis
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=multi-user.target

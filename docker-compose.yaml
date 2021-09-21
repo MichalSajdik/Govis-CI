@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  govis:
+    build: .
+    image: sap/govis
+    restart: always
+    container_name: govis
+    ports:
+      - 8000:8000
+    environment:
+      - GOVIS_SECRET=secret
+      - GOVIS_BASIC_AUTH=
+      - GOVIS_PORT=8000
+      - GOVIS_HOSTNAME=

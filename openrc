@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+unset HTTP_PROXY
+unset HTTPS_PROXY
+unset http_proxy
+unset https_proxy
+
+
+if [ -z $GOVIS_SECRET]; then
+    echo "Please enter secret from github webhook"
+    read -s GOVIS_SECRET_INPUT
+    export GOVIS_SECRET=$GOVIS_SECRET_INPUT
+fi
+
+if [ -z $GOVIS_BASIC_AUTH]; then
+    echo "Please Enter Base64 encoded username:apitoken"
+    read -s GOVIS_BASIC_AUTH_INPUT
+    export GOVIS_BASIC_AUTH=$GOVIS_BASIC_AUTH_INPUT
+fi
